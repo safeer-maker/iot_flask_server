@@ -12,8 +12,10 @@ def home():
 
 @app.route("/query", methods=['GET'])
 def query():
-    sam = request.args.get('name')
+    name = request.args.get('name')
+    arg = request.args.get('sss')
+
     return jsonify(
-        sam
+        name, arg
     )
-app.run()
+app.run(host = '0.0.0.0')
